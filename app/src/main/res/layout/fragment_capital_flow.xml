@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/swipe_refresh"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- 顶部标题 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="8dp">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A股主力资金流入"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="主力资金净流入排名（亿元）"
+                android:textSize="13sp"
+                android:textColor="@color/text_secondary" />
+        </LinearLayout>
+
+        <!-- A股/美股切换 Tab -->
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_tab_layout"
+            app:tabBackground="@drawable/tab_selector"
+            app:tabIndicatorHeight="0dp"
+            app:tabSelectedTextColor="@color/white"
+            app:tabTextColor="@color/text_secondary"
+            app:tabTextAppearance="@style/TabTextAppearance"
+            app:tabPadding="8dp" />
+
+        <!-- 列表表头 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="10dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/card_bg">
+
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:text="排名"
+                android:textSize="13sp"
+                android:textColor="@color/text_secondary"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="股票"
+                android:textSize="13sp"
+                android:textColor="@color/text_secondary"
+                android:layout_marginStart="8dp" />
+
+            <TextView
+                android:layout_width="78dp"
+                android:layout_height="wrap_content"
+                android:text="主力净流入"
+                android:textSize="13sp"
+                android:textColor="@color/text_secondary"
+                android:gravity="end"
+                android:layout_marginEnd="6dp" />
+
+            <TextView
+                android:id="@+id/tv_header_recent"
+                android:layout_width="62dp"
+                android:layout_height="wrap_content"
+                android:text="近5日"
+                android:textSize="13sp"
+                android:textColor="@color/text_secondary"
+                android:gravity="end"
+                android:layout_marginEnd="6dp" />
+
+            <TextView
+                android:layout_width="62dp"
+                android:layout_height="wrap_content"
+                android:text="涨跌幅"
+                android:textSize="13sp"
+                android:textColor="@color/text_secondary"
+                android:gravity="end" />
+        </LinearLayout>
+
+        <!-- 资金流入列表 -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_capital_flow"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/card_bg"
+            android:paddingHorizontal="16dp" />
+
+    </LinearLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
